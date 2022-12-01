@@ -12,8 +12,9 @@ id="$1"
 ppath="$(pwd)"
 scope_path="$ppath/scope/$id"
 
-timestamp="$(date +%T)"
-scan_path="$ppath/scans/$id-$timestamp"
+timestamp="$(date +%s)"
+foldertime="$(date +%T)"
+scan_path="$ppath/scans/$id-$foldertime"
 
 if [ ! -d "$scope_path" ]; then
 	mkdir "$ppath/scope/$id" | echo "$id" >> roots.txt | mv roots.txt "$scope_path/"
@@ -39,6 +40,8 @@ echo "              _   _      _     _           ____
 
 echo "Script is under Beta Tesing"
 echo "Starting scan against roots:"
+start_time=$(date +%T)
+echo "Scan Started at : $start_time";
 cat "$scope_path/roots.txt"
 cp "$scope_path/roots.txt" "$scan_path/roots.txt"
 sleep 3
