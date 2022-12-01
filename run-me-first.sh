@@ -21,7 +21,7 @@ if [ flag==1 ]; then
 	go install -v github.com/pry0cc/tew@latest
 	go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
 	apt install jq && apt install massdns
-	mv ~/go/bin/* /usr/local/go
+	mv ~/go/bin/* /usr/local/bin
 	sleep 1
 	echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
 	clear
