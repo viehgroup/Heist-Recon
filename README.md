@@ -1,6 +1,10 @@
+Heist - Recon
+
+All in one Recon Script 
+
 Steps to Install :
 
-run-me-first script will install all tools needed for fully automate recon script
+run-me-first will install all dependencies
 
 1.chmod +x run-me-first.sh
 2.sudo ./run-me-first.sh
@@ -12,9 +16,7 @@ Syntax :
 1.chmod +x ./scan.sh 
 2./scan.sh example.com
 
-#################################################################################
-
-You Need an Account on securitytrails.com For Working of haktrails 
+Haktrails API Steps : 
 
 1. Create account on securitytrails.com
 2. You will find api key after making account on securitytrails.com, copy that.
@@ -26,7 +28,4 @@ Copy Paste This As it is :
 securitytrails:
   key: <yourkey> 
 
-#################################################################################
-
-Thank You For Using Script!
 
