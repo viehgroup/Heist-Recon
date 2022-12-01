@@ -5,12 +5,8 @@ if echo "$check1" | grep -q "/usr/local/go/bin"; then
 else
 	echo "Installing GO Language"
 	wget -P /tmp https://go.dev/dl/go1.19.3.linux-amd64.tar.gz | rm -rf /usr/local/go && tar -C /usr/local -xzf /tmp/go1.19.3.linux-amd64.tar.gz
-	sleep 1 
-	export PATH=$PATH:/usr/local/go/bin
 	sleep 1
 	echo "Installation of GO Sucessfully..."
-	echo "To Check GO Version Installed or Not Use This Command \n"
-	echo "go version"
 	flag=1;
 fi
 if [ flag==1 ]; then
@@ -24,7 +20,10 @@ if [ flag==1 ]; then
 	go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
 	go install -v github.com/pry0cc/tew@latest
 	go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+	apt install jq && apt install massdns
+	mv ~/go/bin/* /usr/local/go
 	sleep 1
+	echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
 	clear
 	echo "Installation Finished Exiting..."
 fi
